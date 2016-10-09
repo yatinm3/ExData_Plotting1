@@ -3,13 +3,12 @@
 #
 #
 # Download file and unzip in local directory
-#fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
-#fnameZip <- "household_power_consumption.zip"
-#download.file(fileUrl, destfile=fnameZip, method="curl")
-#unzip(fileZip)
+fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+fnameZip <- "household_power_consumption.zip"
+download.file(fileUrl, destfile=fnameZip, method="curl")
+unzip(fileZip)
 
 fnameMeter <- "household_power_consumption.txt"
-#df.colClasses <- c("character", "Time", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
 dfInput <- read.table(fnameMeter, header=TRUE, sep=";", na.strings="?")
 
 #Add a column posixDate based on Date/Time columns
